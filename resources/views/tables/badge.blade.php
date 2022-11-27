@@ -1,0 +1,1 @@
+<span class="badge badge-{{$value == 0 ? 'secondary' : $type ?? 'primary' }} bg-gradient">{{ $value }}</span>

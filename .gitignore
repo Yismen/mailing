@@ -1,0 +1,5 @@
+/.vscode
+/vendor
+.phpunit.result.cache
+/node_modules
+Pending.tasks

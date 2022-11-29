@@ -14,7 +14,7 @@ return [
         'web' => 'auth',
     ],
     'mailables_dir' => env('REPORT_MAILABLES_DIR', __DIR__ . '/../src/Mail/'),
-    'db_prefix' => 'hr_',
+    'db_prefix' => 'report_',
     'routes_prefix' => [
         'guest' => 'report',
         'admin' => 'report/admin'

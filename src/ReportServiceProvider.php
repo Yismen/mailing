@@ -102,5 +102,10 @@ class ReportServiceProvider extends AuthServiceProvider
         Livewire::component('report::mailable.index', \Dainsys\Report\Http\Livewire\Mailable\Index::class);
         Livewire::component('report::mailable.detail', \Dainsys\Report\Http\Livewire\Mailable\Detail::class);
         Livewire::component('report::mailable.form', \Dainsys\Report\Http\Livewire\Mailable\Form::class);
+
+        Livewire::component('report::recipient.table', \Dainsys\Report\Http\Livewire\Recipient\Table::class);
+        Livewire::component('report::recipient.index', \Dainsys\Report\Http\Livewire\Recipient\Index::class);
+        Livewire::component('report::recipient.detail', \Dainsys\Report\Http\Livewire\Recipient\Detail::class);
+        Livewire::component('report::recipient.form', \Dainsys\Report\Http\Livewire\Recipient\Form::class);
     }
 }

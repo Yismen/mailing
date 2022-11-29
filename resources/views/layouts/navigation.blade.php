@@ -39,6 +39,14 @@
                     </li>
                     @endcan
 
+                    @can('viewAny', \Dainsys\Report\Models\Recipient::class)
+                    <li class="nav-item">
+                        <a href="{{ route('report.admin.recipients.index') }}" target="_top" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>{{ __('Recipients') }}</p>
+                        </a>
+                    </li>
+                    @endcan
                 </ul>
             </li>
         </ul>

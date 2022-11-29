@@ -20,5 +20,9 @@ Route::middleware(['web'])->group(function () {
             Route::get('mailables', \Dainsys\Report\Http\Livewire\Mailable\Index::class)
                 ->name('mailables.index')
                 ->can('viewAny', \Dainsys\Report\Models\Mailable::class);
+
+            Route::get('recipients', \Dainsys\Report\Http\Livewire\Recipient\Index::class)
+                    ->name('recipients.index')
+                    ->can('viewAny', \Dainsys\Report\Models\Recipient::class);
         });
 });

@@ -5,6 +5,7 @@ namespace Dainsys\Report\Http\Livewire\Recipient;
 use Livewire\Component;
 use Illuminate\Validation\Rule;
 use Dainsys\Report\Models\Recipient;
+use Dainsys\Report\Services\MailableService;
 use Dainsys\Report\Traits\WithRealTimeValidation;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -20,30 +21,14 @@ class Form extends Component
 
     public bool $editing = false;
     public string $modal_event_name_form = 'showRecipientFormModal';
+    public $mailables = [];
 
     public $recipient;
-
-    protected function getRules()
-    {
-        return [
-            'recipient.name' => [
-                'required',
-                Rule::unique(reportTableName('recipients'), 'name')->ignore($this->recipient->id ?? 0)
-            ],
-            'recipient.email' => [
-                'required',
-                Rule::unique(reportTableName('recipients'), 'email')->ignore($this->recipient->id ?? 0)
-            ],
-            'recipient.title' => [
-                'nullable',
-                'max:100'
-            ]
-        ];
-    }
 
     public function render()
     {
         return view('report::livewire.recipient.form', [
+            'mailables_list' => MailableService::list()
         ])
         ->layout('report::layouts.app');
     }
@@ -51,6 +36,7 @@ class Form extends Component
     public function createRecipient($recipient = null)
     {
         $this->recipient = new Recipient(['name' => $recipient]);
+        $this->recipient->load(['mailables']);
         $this->authorize('create', $this->recipient);
         $this->editing = false;
 
@@ -62,7 +48,8 @@ class Form extends Component
 
     public function updateRecipient(Recipient $recipient)
     {
-        $this->recipient = $recipient;
+        $this->recipient = $recipient->load(['mailables']);
+        $this->mailables = $recipient->mailables->pluck('id')->toArray();
         $this->authorize('update', $this->recipient);
         $this->editing = true;
 
@@ -80,6 +67,7 @@ class Form extends Component
         $this->editing = false;
 
         $this->recipient->save();
+        $this->recipient->mailables()->sync((array)$this->mailables);
 
         $this->dispatchBrowserEvent('closeAllModals');
 
@@ -94,6 +82,7 @@ class Form extends Component
         $this->validate();
 
         $this->recipient->save();
+        $this->recipient->mailables()->sync((array)$this->mailables);
 
         $this->dispatchBrowserEvent('closeAllModals');
 
@@ -102,5 +91,27 @@ class Form extends Component
         $this->editing = false;
 
         $this->emit('recipientUpdated');
+    }
+
+    protected function getRules()
+    {
+        return [
+            'recipient.name' => [
+                'required',
+                Rule::unique(reportTableName('recipients'), 'name')->ignore($this->recipient->id ?? 0)
+            ],
+            'recipient.email' => [
+                'required',
+                Rule::unique(reportTableName('recipients'), 'email')->ignore($this->recipient->id ?? 0)
+            ],
+            'recipient.title' => [
+                'nullable',
+                'max:100'
+            ],
+            'mailables' => [
+                'nullable',
+                'array',
+            ]
+        ];
     }
 }

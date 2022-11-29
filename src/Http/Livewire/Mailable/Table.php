@@ -20,9 +20,9 @@ class Table extends AbstractDataTableComponent
     {
         return Mailable::query()
             // ->with(['information'])
-            // ->withCount([
-            //     'employees',
-            // ])
+            ->withCount([
+                'recipients',
+            ])
             ;
     }
 
@@ -34,9 +34,9 @@ class Table extends AbstractDataTableComponent
                 ->searchable(),
             Column::make('Description')
                 ->searchable()
-                ->format(fn ($value) => str($value ?? '')->limit(30)),
-            // Column::make('Recipients', 'id')
-            //     ->format(fn ($value, $row) => view('report::tables.badge')->with(['value' => $row->employees_count])),
+                ->format(fn ($value, $row) => $row->short_description),
+            Column::make('Recipients', 'id')
+                ->format(fn ($value, $row) => view('report::tables.badge')->with(['value' => $row->recipients_count])),
             Column::make('Actions', 'id')
                 ->view('report::tables.actions'),
         ];

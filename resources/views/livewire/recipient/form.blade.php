@@ -18,6 +18,15 @@
 
                 <x-report::inputs.with-labels field="recipient.title" :required="false">{{ __('Title') }}:
                 </x-report::inputs.with-labels>
+
+                <h5 class="border-top pt-1">{{ __('Mailables') }}</h5>
+                @foreach ($mailables_list as $mailable_id => $mailable_name)
+                <x-report::inputs.switch field="mailables" value="{{ $mailable_id }}"
+                    wire:key='mailable{{ $mailable_id }}'>
+                    {{
+                    $mailable_name }}
+                </x-report::inputs.switch>
+                @endforeach
             </div>
         </x-report::form>
     </x-report::modal>

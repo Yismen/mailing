@@ -20,6 +20,28 @@
             </tbody>
         </table>
 
+        <h5 class="p-2 border-top">{{ __('Mailables') }}</h5>
+        @if ($recipient && $recipient->mailables->count() > 0)
+        <table class="table table-striped table-sm px-2">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>{{ __('Name') }}</th>
+                    <th>{{ __('Description') }}</th>
+                    {{-- <th>{{ __('Title') }}</th> --}}
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($recipient->mailables as $mailable)
+                <tr>
+                    <td class="text-bold" scope="row">{{ $mailable->name }}</td>
+                    <td title="{{ $mailable->description }}">{{ $mailable->shortDescription }}</td>
+                    {{-- <td>{{ $mailable->title }}</td> --}}
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        @endif
+
         <x-slot name="footer">
             <button class="btn btn-warning btn-sm" wire:click='$emit("updateRecipient", {{ $recipient->id ?? '' }})'>{{
                 __('Edit') }}</button>

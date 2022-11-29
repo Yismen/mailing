@@ -19,10 +19,9 @@ class Table extends AbstractDataTableComponent
     public function builder(): Builder
     {
         return Recipient::query()
-            // ->with(['information'])
-            // ->withCount([
-            //     'employees',
-            // ])
+            ->withCount([
+                'mailables',
+            ])
             ;
     }
 
@@ -38,8 +37,8 @@ class Table extends AbstractDataTableComponent
             Column::make('Title')
                 ->sortable()
                 ->searchable(),
-            // Column::make('Recipients', 'id')
-            //     ->format(fn ($value, $row) => view('report::tables.badge')->with(['value' => $row->employees_count])),
+            Column::make('Mailables', 'id')
+                ->format(fn ($value, $row) => view('report::tables.badge')->with(['value' => $row->mailables_count])),
             Column::make('Actions', 'id')
                 ->view('report::tables.actions'),
         ];

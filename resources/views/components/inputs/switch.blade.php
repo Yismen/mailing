@@ -1,19 +1,21 @@
 @props([
 'field',
 'required' => true,
-'options',
 ])
+
+@php
+$id = rand();
+@endphp
 <div class="mb-3">
-    <div {{ $attributes->class([
-        'form-check form-check-inline',
+    <div class="custom-control custom-switch">
+        <input type="checkbox" id="{{ $id }}" wire:model='{{ $field }}' {{ $attributes->class([
+        'custom-control-input',
         'is-invalid' => $errors->has($field)
         ])->merge([])
-        }}
-        >
-        <label class="form-check-label @error($field) is-invalid @enderror">
-            <input class=" form-check-input" type="checkbox" wire:model='{{ $field }}'> {{ $slot }}
-            <x-report::inputs.error :field="$field" />
+        }}>
+        <label class="custom-control-label" for="{{ $id }}">
+            {{ $slot }}
         </label>
+        <x-report::inputs.error :field="$field" />
     </div>
-
 </div>

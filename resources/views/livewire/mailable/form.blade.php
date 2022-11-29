@@ -15,6 +15,13 @@
 
                 <x-report::inputs.text-area field="mailable.description" :required="false">{{ __('Description') }}:
                 </x-report::inputs.text-area>
+
+                <h5 class="border-top pt-1">{{ __('Recipients') }}</h5>
+                @foreach ($recipients_list as $recipient_id => $recipient_name)
+                <x-report::inputs.switch field="recipients" value="{{ $recipient_id }}"
+                    wire:key='recipient{{ $recipient_id }}'>{{ $recipient_name }}
+                </x-report::inputs.switch>
+                @endforeach
             </div>
         </x-report::form>
     </x-report::modal>

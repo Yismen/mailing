@@ -5,6 +5,7 @@ namespace Dainsys\Report\Http\Livewire\Mailable;
 use Livewire\Component;
 use Illuminate\Validation\Rule;
 use Dainsys\Report\Models\Mailable;
+use Dainsys\Report\Services\RecipientService;
 use Dainsys\Report\Traits\WithRealTimeValidation;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -22,23 +23,12 @@ class Form extends Component
     public string $modal_event_name_form = 'showMailableFormModal';
 
     public $mailable;
-
-    protected function getRules()
-    {
-        return [
-            'mailable.name' => [
-                'required',
-                Rule::unique(reportTableName('mailables'), 'name')->ignore($this->mailable->id ?? 0)
-            ],
-            'mailable.description' => [
-                'nullable'
-            ]
-        ];
-    }
+    public $recipients = [];
 
     public function render()
     {
         return view('report::livewire.mailable.form', [
+            'recipients_list' => RecipientService::list()->all()
         ])
         ->layout('report::layouts.app');
     }
@@ -46,6 +36,8 @@ class Form extends Component
     public function createMailable($mailable = null)
     {
         $this->mailable = new Mailable(['name' => $mailable]);
+        $this->mailable->load(['recipients']);
+        $this->recipients = [];
         $this->authorize('create', $this->mailable);
         $this->editing = false;
 
@@ -57,7 +49,8 @@ class Form extends Component
 
     public function updateMailable(Mailable $mailable)
     {
-        $this->mailable = $mailable;
+        $this->mailable = $mailable->load(['recipients']);
+        $this->recipients = $mailable->recipients->pluck('id')->toArray();
         $this->authorize('update', $this->mailable);
         $this->editing = true;
 
@@ -75,6 +68,7 @@ class Form extends Component
         $this->editing = false;
 
         $this->mailable->save();
+        $this->mailable->recipients()->sync((array)$this->recipients);
 
         $this->dispatchBrowserEvent('closeAllModals');
 
@@ -89,6 +83,7 @@ class Form extends Component
         $this->validate();
 
         $this->mailable->save();
+        $this->mailable->recipients()->sync((array)$this->recipients);
 
         $this->dispatchBrowserEvent('closeAllModals');
 
@@ -97,5 +92,22 @@ class Form extends Component
         $this->editing = false;
 
         $this->emit('mailableUpdated');
+    }
+
+    protected function getRules()
+    {
+        return [
+            'mailable.name' => [
+                'required',
+                Rule::unique(reportTableName('mailables'), 'name')->ignore($this->mailable->id ?? 0)
+            ],
+            'mailable.description' => [
+                'nullable'
+            ],
+            'recipients' => [
+                'nullable',
+                'array',
+            ]
+        ];
     }
 }

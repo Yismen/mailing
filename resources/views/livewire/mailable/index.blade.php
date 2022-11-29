@@ -2,7 +2,7 @@
     <livewire:report::mailable.detail />
     <livewire:report::mailable.form />
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <h5>{{ __('Mailables List') }}</h5>
             <ul class="list-group overflow-auto">
                 @foreach ($mailable_files as $mailable)
@@ -21,7 +21,7 @@
                 @endforeach
             </ul>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-p">
             <div class="card ">
                 <div class="card-body text-black" :key="time()">
                     <livewire:report::mailable.table />

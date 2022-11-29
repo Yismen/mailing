@@ -43,9 +43,9 @@ class Form extends Component
         ->layout('report::layouts.app');
     }
 
-    public function createMailable()
+    public function createMailable($mailable = null)
     {
-        $this->mailable = new Mailable();
+        $this->mailable = new Mailable(['name' => $mailable]);
         $this->authorize('create', $this->mailable);
         $this->editing = false;
 

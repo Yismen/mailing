@@ -34,7 +34,7 @@ class Table extends AbstractDataTableComponent
                 ->searchable(),
             Column::make('Description')
                 ->searchable()
-                ->format(fn ($value) => str($value)->limit(30)),
+                ->format(fn ($value) => str($value ?? '')->limit(30)),
             // Column::make('Recipients', 'id')
             //     ->format(fn ($value, $row) => view('report::tables.badge')->with(['value' => $row->employees_count])),
             Column::make('Actions', 'id')

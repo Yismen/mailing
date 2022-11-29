@@ -1,6 +1,6 @@
 {
     "name": "dainsys/report",
-    "description": "Surve package for Dainsys",
+    "description": "Report and recipients management package for Dainsys",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,9 +15,7 @@
         "laravel/ui": "^3.0|4.0",
         "livewire/livewire": "^2.10",
         "rappasoft/laravel-livewire-tables": "^2.8",
-        "cviebrock/eloquent-sluggable": "^8.0",
-        "php-flasher/flasher-laravel": "^1.7",
-        "maatwebsite/excel": "^3.1|4.0"
+        "php-flasher/flasher-laravel": "^1.7"
     },
     "require-dev": {
         "orchestra/testbench": "6.x-dev",

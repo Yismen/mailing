@@ -29,7 +29,6 @@ class TestCase extends OrchestraTestCase
             \Laravel\Ui\UiServiceProvider::class,
             \Livewire\LivewireServiceProvider::class,
             \Rappasoft\LaravelLivewireTables\LaravelLivewireTablesServiceProvider::class,
-            \Cviebrock\EloquentSluggable\ServiceProvider::class,
             \Flasher\Laravel\FlasherServiceProvider::class,
             \Dainsys\Report\ReportServiceProvider::class,
         ];

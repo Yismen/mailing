@@ -13,10 +13,11 @@ return [
         'api' => 'api',
         'web' => 'auth',
     ],
+    'mailables_dir' => env('REPORT_MAILABLES_DIR', __DIR__ . '/../src/Mail/'),
     'db_prefix' => 'hr_',
     'routes_prefix' => [
-        'guest' => '',
-        'admin' => 'admin'
+        'guest' => 'report',
+        'admin' => 'report/admin'
     ],
     'seeds' => [
         'termination_types' => [],

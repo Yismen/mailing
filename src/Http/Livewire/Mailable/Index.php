@@ -23,7 +23,7 @@ class Index extends Component
 
         return view('report::livewire.mailable.index', [
             'mailable_files' => MailableFilesService::list(),
-            'mailables' => MailableService::list()
+            'mailables' => MailableService::list(),
         ])
         ->layout('report::layouts.app');
     }

@@ -1,8 +1,9 @@
 <div>
     <livewire:report::mailable.detail />
     <livewire:report::mailable.form />
-    <div class="row">
-        <div class="col-sm-3">
+    <div class="d-flex justify-content-between">
+        @if (count($mailable_files) > 0)
+        <div class="" style="max-width: 30%!important">
             <h5>{{ __('Mailables List') }}</h5>
             <ul class="list-group overflow-auto">
                 @foreach ($mailable_files as $mailable)
@@ -21,7 +22,8 @@
                 @endforeach
             </ul>
         </div>
-        <div class="col-sm-9">
+        @endif
+        <div class="" style="flex: 1;">
             <div class="card ">
                 <div class="card-body text-black" :key="time()">
                     <livewire:report::mailable.table />

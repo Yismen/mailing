@@ -24,6 +24,7 @@ class MailableFactory extends Factory
         return [
             'name' => $this->faker->company(),
             'description' => $this->faker->email(),
+            'active' => $this->faker->randomElement([0, 1]),
         ];
     }
 }

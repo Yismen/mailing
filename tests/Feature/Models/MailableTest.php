@@ -19,7 +19,7 @@ class MailableTest extends TestCase
         Mailable::create($data->toArray());
 
         $this->assertDatabaseHas(reportTableName('mailables'), $data->only([
-            'name', 'description'
+            'name', 'description', 'active'
         ]));
     }
 

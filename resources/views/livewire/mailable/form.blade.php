@@ -12,6 +12,8 @@
             <div class="p-3">
                 <x-report::inputs.with-labels field="mailable.name">{{ __('Name') }}:
                 </x-report::inputs.with-labels>
+                <x-report::inputs.switch field="mailable.active">{{ __('Active') }}:
+                </x-report::inputs.switch>
 
                 <x-report::inputs.text-area field="mailable.description" :required="false">{{ __('Description') }}:
                 </x-report::inputs.text-area>

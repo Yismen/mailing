@@ -3,8 +3,8 @@
 namespace Dainsys\Report\Feature\Http\Livewire\Mailable;
 
 use Livewire\Livewire;
-use Dainsys\Report\Models\Mailable;
 use Dainsys\Report\Tests\TestCase;
+use Dainsys\Report\Models\Mailable;
 use Dainsys\Report\Http\Livewire\Mailable\Form;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -60,7 +60,7 @@ class FormTest extends TestCase
     public function mailable_index_component_create_new_record()
     {
         $this->withAuthorizedUser();
-        $data = ['name' => 'New Mailable', 'description' => 'new description'];
+        $data = ['name' => 'New Mailable', 'description' => 'new description', 'active' => true];
         $component = Livewire::test(Form::class)
             ->set('mailable', new Mailable($data));
 

@@ -17,6 +17,7 @@ class CreateReportMailablesTable extends Migration
             $table->id();
             $table->string('name', 500)->unique();
             $table->text('description')->nullable();
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }

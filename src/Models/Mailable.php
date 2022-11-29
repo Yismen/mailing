@@ -9,7 +9,7 @@ class Mailable extends AbstractModel
 {
     use BelongsToManyRecipients;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'active'];
 
     protected static function newFactory(): MailableFactory
     {
@@ -19,5 +19,10 @@ class Mailable extends AbstractModel
     public function getShortDescriptionAttribute()
     {
         return str($this->attributes['description'] ?? '')->limit(25);
+    }
+
+    public function scopeActives($query)
+    {
+        $query->where('active', true);
     }
 }

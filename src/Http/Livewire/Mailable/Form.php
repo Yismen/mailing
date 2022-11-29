@@ -35,7 +35,7 @@ class Form extends Component
 
     public function createMailable($mailable = null)
     {
-        $this->mailable = new Mailable(['name' => $mailable]);
+        $this->mailable = new Mailable(['name' => $mailable, 'active' => true]);
         $this->mailable->load(['recipients']);
         $this->recipients = [];
         $this->authorize('create', $this->mailable);
@@ -103,6 +103,10 @@ class Form extends Component
             ],
             'mailable.description' => [
                 'nullable'
+            ],
+            'mailable.active' => [
+                'nullable',
+                'boolean'
             ],
             'recipients' => [
                 'nullable',

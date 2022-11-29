@@ -21,7 +21,7 @@
                 @endforeach
             </ul>
         </div>
-        <div class="col-sm-p">
+        <div class="col-sm-9">
             <div class="card ">
                 <div class="card-body text-black" :key="time()">
                     <livewire:report::mailable.table />

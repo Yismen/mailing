@@ -26,9 +26,7 @@ class MailableFilesService implements ServicesContract
         $filesystem = new Filesystem();
 
         foreach ($paths as $path) {
-            if (!$filesystem->exists($path)) {
-                throw new DirectoryNotFoundException("Directory {$path} not found!");
-            } else {
+            if ($filesystem->exists($path)) {
                 foreach ($filesystem->allFiles($path) as $file) {
                     $namespace = str($file->getContents())->after('namespace ')->before(';')->trim()->__toString();
                     $class = "{$namespace}\\{$file->getFilenameWithoutExtension()}";

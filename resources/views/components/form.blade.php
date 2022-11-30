@@ -14,11 +14,11 @@
 
         @if ($editing)
         <x-report::button type="submit" color="warning" class="btn-sm">
-            {{ __('Update') }}
+            {{ __('report::messages.update') }}
         </x-report::button>
         @else
         <x-report::button type="submit" color="primary" class="btn-sm">
-            {{ __('Create') }}
+            {{ __('report::messages.create') }}
         </x-report::button>
         @endif
     </div>

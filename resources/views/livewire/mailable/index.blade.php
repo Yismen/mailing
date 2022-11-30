@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between">
         @if (count($mailable_files) > 0)
         <div class="pr-2" style="max-width: 50%!important; flex: 0;">
-            <h5>{{ __('Mailables List') }}</h5>
+            <h5>{{ __('report::messages.mailables_list') }}</h5>
             <ul class="list-group overflow-auto">
                 @foreach ($mailable_files as $mailable)
                 <li class="list-group-item d-flex justify-content-between ">

@@ -3,20 +3,20 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('report.admin.dashboard.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                        {{ __('Dashboard') }}
+                        {{ __('report::messages.dashboard') }}
                     </p>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
                 <a href="{{ route('report.about') }}" class="nav-link">
                     <i class="nav-icon far fa-address-card"></i>
                     <p>
-                        {{ __('About') }}
+                        {{ __('report::messages.about') }}
                     </p>
                 </a>
             </li>
@@ -25,7 +25,7 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-circle nav-icon"></i>
                     <p>
-                        {{ __('Human Resource Links') }}
+                        {{ __('report::messages.report_links') }}
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -34,7 +34,7 @@
                     <li class="nav-item">
                         <a href="{{ route('report.admin.mailables.index') }}" target="_top" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>{{ __('Mailables') }}</p>
+                            <p>{{ __('report::messages.mailables') }}</p>
                         </a>
                     </li>
                     @endcan
@@ -43,7 +43,7 @@
                     <li class="nav-item">
                         <a href="{{ route('report.admin.recipients.index') }}" target="_top" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>{{ __('Recipients') }}</p>
+                            <p>{{ __('report::messages.recipients') }}</p>
                         </a>
                     </li>
                     @endcan

@@ -1,32 +1,34 @@
 @props(['information', 'modelName', 'modelId'])
 <div class="border-top bg-gradient-info py-2">
-    <h5 class="px-2">{{ __('Information') }}</h5>
+    <h5 class="px-2">{{ __('report::messages.information') }}</h5>
 
     @if (isset($information) && $information )
     <table class="table table-striped table-inverse table-sm">
         <tbody class="thead-inverse">
             <tr>
-                <th class="text-right">{{ __('Photo') }}:</th>
+                <th class="text-right">{{ __('report::messages.photo') }}:</th>
                 <td class="text-left">
-                    <a href="{{ '/storage/' . $information->photo_url ?? '' }}" target="_blank" rel="noopener noreferrer">
-                        <img src="{{ '/storage/' . $information->photo_url ?? '' }}" height="120" width="120" class="img-thumbnail rounded-circle" alt="{{ $information->photo_url ?? '' }}">
+                    <a href="{{ '/storage/' . $information->photo_url ?? '' }}" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="{{ '/storage/' . $information->photo_url ?? '' }}" height="120" width="120"
+                            class="img-thumbnail rounded-circle" alt="{{ $information->photo_url ?? '' }}">
                     </a>
                 </td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('Phone') }}:</th>
+                <th class="text-right">{{ __('report::messages.phone') }}:</th>
                 <td class="text-left">{{ $information->phone ?? '' }}</td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('Email') }}:</th>
+                <th class="text-right">{{ __('report::messages.email') }}:</th>
                 <td class="text-left">{{ $information->email ?? '' }}</td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('Address') }}:</th>
+                <th class="text-right">{{ __('report::messages.address') }}:</th>
                 <td class="text-left">{{ $information->address ?? '' }}</td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('Company Id') }}:</th>
+                <th class="text-right">{{ __('report::messages.company_id') }}:</th>
                 <td class="text-left">{{ $information->company_id ?? '' }}</td>
             </tr>
         </tbody>
@@ -44,7 +46,7 @@
 
     <div class="btn btn-sm btn-primary mx-2"
         wire:click='$emit("createInformation", "{{ str($modelName ?? '')->afterLast("\\") }}", "{{ $modelId }}" )'>
-        {{ __('Add') }} {{ __('Information') }}
+        {{ __('report::messages.=add') }} {{ __('report::messages.information') }}
     </div>
     @endif
 </div>

@@ -74,6 +74,10 @@ class ReportServiceProvider extends AuthServiceProvider
         $this->publishes([
             __DIR__ . '/../public' => public_path('vendor/dainsys/report'),
         ], 'report:assets');
+
+        $this->publishes([
+            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/report'),
+        ], 'report:translations');
     }
 
     protected function bootLoads()
@@ -82,6 +86,7 @@ class ReportServiceProvider extends AuthServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'report');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'report');
     }
 
     protected function registerSchedulledCommands()

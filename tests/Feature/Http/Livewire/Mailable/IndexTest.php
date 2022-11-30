@@ -4,8 +4,8 @@ namespace Dainsys\Report\Feature\Http\Livewire\Mailable;
 
 use Livewire\Livewire;
 use Dainsys\Report\Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Dainsys\Report\Http\Livewire\Mailable\Index;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class IndexTest extends TestCase
 {

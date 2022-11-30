@@ -13,7 +13,9 @@ return [
         'api' => 'api',
         'web' => 'auth',
     ],
-    'mailables_dir' => env('REPORT_MAILABLES_DIR', __DIR__ . '/../src/Mail/'),
+    'mailables_dirs' => [
+        env('REPORT_MAILABLES_DIR', __DIR__ . '/../src/Mail/')
+    ],
     'db_prefix' => 'report_',
     'routes_prefix' => [
         'guest' => 'report',

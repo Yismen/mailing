@@ -22,19 +22,21 @@ class MailableFilesService implements ServicesContract
 
     protected static function getFiles(): array
     {
-        $path = app('config')['report']['mailables_dir'];
+        $paths = app('config')->get('report.mailables_dirs');
         $filesystem = new Filesystem();
 
-        if (!$filesystem->exists($path)) {
-            throw new DirectoryNotFoundException("Directory {$path} not found!");
-        } else {
-            foreach ($filesystem->allFiles($path) as $file) {
-                $namespace = str($file->getContents())->after('namespace ')->before(';')->trim()->__toString();
-                $class = "{$namespace}\\{$file->getFilenameWithoutExtension()}";
-                $reflection = new ReflectionClass($class);
+        foreach ($paths as $path) {
+            if (!$filesystem->exists($path)) {
+                throw new DirectoryNotFoundException("Directory {$path} not found!");
+            } else {
+                foreach ($filesystem->allFiles($path) as $file) {
+                    $namespace = str($file->getContents())->after('namespace ')->before(';')->trim()->__toString();
+                    $class = "{$namespace}\\{$file->getFilenameWithoutExtension()}";
+                    $reflection = new ReflectionClass($class);
 
-                if ($file->isFile() && $reflection->implementsInterface(MailMailable::class)) {
-                    self::$files[] = $class;
+                    if ($file->isFile() && $reflection->implementsInterface(MailMailable::class)) {
+                        self::$files[] = $class;
+                    }
                 }
             }
         }

@@ -57,6 +57,8 @@ class ReportServiceProvider extends AuthServiceProvider
             __DIR__ . '/../config/report.php',
             'report'
         );
+
+        \Dainsys\Report\Report::bind(app_path('Mail'));
     }
 
     protected function bootPublishableAssets()

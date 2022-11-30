@@ -239,12 +239,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "46374329aacea9901e1b556bc6ee3b1d69ccc3c2"
+                "reference": "241097b518e54cc24b7d7dba2f1e5e7990b5c35d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/46374329aacea9901e1b556bc6ee3b1d69ccc3c2",
-                "reference": "46374329aacea9901e1b556bc6ee3b1d69ccc3c2",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/241097b518e54cc24b7d7dba2f1e5e7990b5c35d",
+                "reference": "241097b518e54cc24b7d7dba2f1e5e7990b5c35d",
                 "shasum": ""
             },
             "require": {
@@ -307,7 +307,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-27T16:20:11+00:00"
+            "time": "2022-11-29T15:45:42+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -3046,12 +3046,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "e428abda3a4a15b96b7275b3d412e07f8630bf25"
+                "reference": "a14cb684cf901b775209ac8b49976d93751da3dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/e428abda3a4a15b96b7275b3d412e07f8630bf25",
-                "reference": "e428abda3a4a15b96b7275b3d412e07f8630bf25",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/a14cb684cf901b775209ac8b49976d93751da3dd",
+                "reference": "a14cb684cf901b775209ac8b49976d93751da3dd",
                 "shasum": ""
             },
             "require": {
@@ -3150,7 +3150,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-25T07:33:13+00:00"
+            "time": "2022-11-28T18:13:24+00:00"
         },
         {
             "name": "symfony/mime",

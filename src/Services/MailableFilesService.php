@@ -24,6 +24,7 @@ class MailableFilesService implements ServicesContract
     {
         $paths = app('config')->get('report.mailables_dirs');
         $filesystem = new Filesystem();
+        self::$files = [];
 
         foreach ($paths as $path) {
             if ($filesystem->exists($path)) {

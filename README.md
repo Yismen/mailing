@@ -1,5 +1,5 @@
- # Dainsys Report
- A full stack package to add report functionality to Laravel applications. 
+ # Dainsys Report and Recipients
+ A full stack package to add report functionality to Laravel applications. This package allows you to associate recipients (contacts) to your mailable files.
 
  ### Installation
  1. Require using composer: `composer require dainsys/report`.

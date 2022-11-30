@@ -1,6 +1,6 @@
 {
     "name": "dainsys/report",
-    "description": "Report and recipients management package for Dainsys",
+    "description": "Report and recipients management package for Dainsys. This package allows you to Associate recipients to your mailable files.",
     "type": "library",
     "license": "MIT",
     "authors": [

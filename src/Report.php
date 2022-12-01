@@ -26,6 +26,8 @@ class Report implements ReportContract
             ->with(['recipients'])
             ->first();
 
-        return $report->recipients->pluck('email', 'name')->all();
+        return $report
+            ? $report->recipients->pluck('email', 'name')->all()
+            : [];
     }
 }

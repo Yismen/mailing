@@ -8,6 +8,7 @@ return [
     'email' => 'Email',
     'mailable' => 'Mailable',
     'mailables' => 'Mailables',
+    'mailables_list' => 'Lista de Mailables',
     'name' => 'Nombre',
     'recipient' => 'Contacto',
     'recipients' => 'Contactos',

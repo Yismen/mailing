@@ -37,9 +37,25 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        // Init terminations type
-        // Init termination reasons
-        // Init suspention types
+        $this->call('vendor:publish', ['--tag' => 'report:assets', '--force' => true]);
+
+        if ($this->confirm('Would you like to run the report\'s migrations now?')) {
+            $this->call('migrate');
+        }
+
+        if ($this->confirm('Would you like to publish the report\'s configuration file?')) {
+            $this->call('vendor:publish', ['--tag' => 'report:config', '--force' => true]);
+        }
+
+        if ($this->confirm('Would you like to publish the report\'s translation file?')) {
+            $this->call('vendor:publish', ['--tag' => 'report:translations']);
+        }
+
+        if ($this->confirm('Would you like to publish the report\'s view files?')) {
+            $this->call('vendor:publish', ['--tag' => 'report:views']);
+        }
+
+        $this->info('All done!');
 
         return 0;
     }

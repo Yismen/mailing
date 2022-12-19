@@ -22,6 +22,15 @@
             </li>
 
             <li class="nav-item">
+                <a href="{{ route('report.admin.dashboard') }}" class="nav-link">
+                    <i class="nav-icon far fa-address-card"></i>
+                    <p>
+                        {{ __('report::messages.dashboard') }}
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-circle nav-icon"></i>
                     <p>

@@ -7,6 +7,8 @@ Route::middleware(['web'])->group(function () {
     Route::as('report.')
     ->prefix('report')
     ->group(function () {
+        Route::get('', \Dainsys\Report\Http\Controllers\AboutController::class)->name('about');
+        Route::get('admin', \Dainsys\Report\Http\Controllers\AboutController::class)->name('about');
         Route::get('about', \Dainsys\Report\Http\Controllers\AboutController::class)->name('about');
     });
     // Auth Routes
@@ -15,7 +17,7 @@ Route::middleware(['web'])->group(function () {
         ->middleware(
             preg_split('/[,|]+/', config('report.midlewares.web'), -1, PREG_SPLIT_NO_EMPTY)
         )->group(function () {
-            // Route::get('dashboard', function () {})->name('dashboard.index');
+            Route::get('dashboard', \Dainsys\Report\Http\Livewire\Dashboard::class)->name('dashboard');
 
             Route::get('mailables', \Dainsys\Report\Http\Livewire\Mailable\Index::class)
                 ->name('mailables.index')

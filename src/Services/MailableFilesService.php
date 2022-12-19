@@ -5,7 +5,6 @@ namespace Dainsys\Report\Services;
 use ReflectionClass;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\Mail\Mailable as MailMailable;
-use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 
 class MailableFilesService implements ServicesContract
 {
@@ -18,6 +17,11 @@ class MailableFilesService implements ServicesContract
         return collect(self::getFiles())->filter(function ($value, $key) use ($mailables) {
             return $mailables->doesntContain($value);
         });
+    }
+
+    public static function count(): int
+    {
+        return count(MailableService::list());
     }
 
     protected static function getFiles(): array

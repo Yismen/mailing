@@ -4,6 +4,7 @@ return [
     'about' => 'Referencia',
     'active' => 'Activo',
     'create' => 'Crear',
+    'dashboard' => 'Tablero',
     'description' => 'Descripcion',
     'email' => 'Email',
     'mailable' => 'Mailable',

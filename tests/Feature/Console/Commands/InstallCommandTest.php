@@ -14,6 +14,10 @@ class InstallCommandTest extends TestCase
     public function install_command_creates_site()
     {
         $this->artisan(InstallCommand::class)
+            ->expectsConfirmation('Would you like to run the report\'s migrations now?', 'no')
+            ->expectsConfirmation('Would you like to publish the report\'s configuration file?', 'no')
+            ->expectsConfirmation('Would you like to publish the report\'s translation file?', 'no')
+            ->expectsConfirmation('Would you like to publish the report\'s view files?', 'no')
             ->assertSuccessful();
     }
 }

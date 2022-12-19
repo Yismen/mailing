@@ -13,4 +13,11 @@ class RecipientService implements ServicesContract
             return Recipient::orderBy('name')->pluck('name', 'id');
         });
     }
+
+    public static function count(): int
+    {
+        return Cache::rememberForever('recipients_count', function () {
+            return Recipient::count();
+        });
+    }
 }

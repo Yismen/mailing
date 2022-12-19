@@ -13,4 +13,11 @@ class MailableService implements ServicesContract
             return Mailable::orderBy('name')->pluck('name', 'id');
         });
     }
+
+    public static function count(): int
+    {
+        return Cache::rememberForever('mailables_count', function () {
+            return Mailable::count();
+        });
+    }
 }

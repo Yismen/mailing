@@ -15,6 +15,6 @@ trait HasAdminCheck
      */
     public function before(User $user, $ability)
     {
-        return $user->can('interact-with-admin');
+        return $user->can('interact-with-mailing-admin');
     }
 }

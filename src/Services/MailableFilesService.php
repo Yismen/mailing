@@ -21,7 +21,7 @@ class MailableFilesService implements ServicesContract
 
     public static function count(): int
     {
-        return count(MailableService::list());
+        return count(self::getFiles());
     }
 
     protected static function getFiles(): array

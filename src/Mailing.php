@@ -43,4 +43,13 @@ class Mailing implements MailingContract
 
         return  $mailing->recipients->pluck('email', 'name')->all();
     }
+
+    public static function registerSuperUsers(array $emails)
+    {
+        $current = config('mailing.super_users');
+
+        $new = $current . ',' . join(',', $emails);
+
+        config()->set('mailing.super_users', $new);
+    }
 }

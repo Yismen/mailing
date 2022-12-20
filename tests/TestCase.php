@@ -2,6 +2,7 @@
 
 namespace Dainsys\Mailing\Tests;
 
+use Dainsys\Mailing\Mailing;
 use Illuminate\Support\Facades\Auth;
 use Dainsys\Mailing\Tests\Models\User;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
@@ -53,6 +54,8 @@ class TestCase extends OrchestraTestCase
 
     protected function withAuthorizedUser()
     {
+        Mailing::registerSuperUsers(['yismen.jorge@gmail.com']);
+
         $user = User::factory()->create([
             'email' => 'yismen.jorge@gmail.com',
             'name' => 'Yismen Jorge'

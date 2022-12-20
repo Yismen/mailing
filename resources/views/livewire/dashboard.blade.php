@@ -11,7 +11,8 @@
             </x-mailing::infographic>
         </div>
         <div class="col-md-3">
-            <x-mailing::infographic type="gray-light" count="{{ $mailables ? ceil($registered / $mailables) *100: 0 }}%">
+            <x-mailing::infographic type="gray-light"
+                count="{{ $mailables > 0 ? ceil($registered / $mailables * 100) : 0 }}%">
                 Mailable Registered
             </x-mailing::infographic>
         </div>

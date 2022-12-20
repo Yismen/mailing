@@ -44,11 +44,11 @@ class InstallCommand extends Command
         }
 
         if ($this->confirm('Would you like to publish the mailing\'s configuration file?')) {
-            $this->call('vendor:publish', ['--tag' => 'mailing:config', '--force' => true]);
+            $this->call('vendor:publish', ['--tag' => 'mailing:config']);
         }
 
         if ($this->confirm('Would you like to publish the mailing\'s translation file?')) {
-            $this->call('vendor:publish', ['--tag' => 'mailing:translations']);
+            $this->call('vendor:publish', ['--tag' => 'mailing:translations', '--force' => true]);
         }
 
         if ($this->confirm('Would you like to publish the mailing\'s view files?')) {

@@ -7,8 +7,8 @@ Route::middleware(['web'])->group(function () {
     Route::as('mailing.')
     ->prefix('mailing')
     ->group(function () {
-        Route::get('', \Dainsys\Mailing\Http\Controllers\AboutController::class)->name('about');
-        Route::get('admin', \Dainsys\Mailing\Http\Controllers\AboutController::class)->name('about');
+        Route::get('', \Dainsys\Mailing\Http\Controllers\AboutController::class);
+        Route::get('admin', \Dainsys\Mailing\Http\Controllers\AboutController::class);
         Route::get('about', \Dainsys\Mailing\Http\Controllers\AboutController::class)->name('about');
     });
     // Auth Routes

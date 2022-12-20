@@ -3,10 +3,15 @@
 
  ### Installation
  1. Require using composer: `composer require dainsys/mailing`.
- 2. Publish the assets: `@php artisan vendor:publish --force --tag=mailing:assets`.  
-    1. optionally, you add the following line to your `composer` file, under the `scripts` and `post-update-cmd` key, to publish the assets every time you update your composer dependencies: `@php artisan vendor:publish --tag=mailing:assets --force --ansi`.
+ 2. You can install all package assets by running `php artisan mailing:install` command.
+    1. Another option is installing each asset individually:
+       1. Publish the assets: `@php artisan vendor:publish --force --tag=mailing:assets`.  
+          1. optionally, you add the following line to your `composer` file, under the `scripts` and `post-update-cmd` key, to publish the assets every time you update your composer dependencies: `@php artisan vendor:publish --tag=mailing:assets --force --ansi`.
     2. If you may want to customize the migrations before next step, first publish them: `@php artisan vendor:publish --force --tag=mailing:migrations`.
- 3. Run the migrations: `php artisan migrate`.   
+    3. Run the migrations: `php artisan migrate`.   
+ 3. Only super admin users are allowed to interact with the app. You can register them using any of the following options:
+    1. Using the register method of your `AuthServiceProvider`: `\Dainsys\Mailing\Mailing::registerSuperUsers(["super@user1.com", "super@user2.com"]);`.
+    2. In your `.env` file, `MAILING_SUPER_USERS='super@user1.com,super@user2.com'`
 ##### Configure your application
  1. Visit package main route: `/dainsys/mailing/about`.
  2. Optionally, you may want to publish and tweek the config file: `@php artisan vendor:publish --force --tag=mailing:config`.

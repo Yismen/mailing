@@ -5,14 +5,10 @@ namespace Dainsys\Mailing;
 use Livewire\Livewire;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Database\Eloquent\Model;
-use Dainsys\Mailing\Events\EmployeeSaved;
 use Illuminate\Console\Scheduling\Schedule;
-use Dainsys\Mailing\Listeners\UpdateFullName;
 use Dainsys\Mailing\Console\Commands\InstallCommand;
 use Dainsys\Mailing\Contracts\AuthorizedUsersContract;
-use Dainsys\Mailing\Console\Commands\UpdateEmployeeSuspensions;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
 
 class MailingServiceProvider extends AuthServiceProvider
@@ -31,13 +27,12 @@ class MailingServiceProvider extends AuthServiceProvider
         if ($this->app->runningInConsole() && !app()->isProduction()) {
             $this->commands([
                 InstallCommand::class,
-                // UpdateEmployeeSuspensions::class,
             ]);
         }
 
         $this->registerSchedulledCommands();
 
-        Gate::define('interact-with-admin', function (\Illuminate\Foundation\Auth\User $user) {
+        Gate::define('interact-with-mailing-admin', function (\Illuminate\Foundation\Auth\User $user) {
             return resolve(AuthorizedUsersContract::class)
             ->has($user->email);
         });
@@ -92,13 +87,11 @@ class MailingServiceProvider extends AuthServiceProvider
     protected function registerSchedulledCommands()
     {
         $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
-            // $schedule->command(UpdateEmployeeSuspensions::class)->dailyAt('03:00');
         });
     }
 
     protected function registerEvents()
     {
-        // Event::listen(EmployeeSaved::class, UpdateFullName::class);
     }
 
     protected function bootLivewireComponents()

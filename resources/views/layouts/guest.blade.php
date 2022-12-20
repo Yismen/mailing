@@ -13,7 +13,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ mix('css/app.css', 'vendor/dainsys/report') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css', 'vendor/dainsys/mailing') }}">
     @livewireStyles
     <style>
         [x-cloak] {
@@ -34,7 +34,7 @@
 
     <!-- REQUIRED SCRIPTS -->
 
-    <script src="{{ mix('js/app.js', 'vendor/dainsys/report') }}"></script>
+    <script src="{{ mix('js/app.js', 'vendor/dainsys/mailing') }}"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     @livewireScripts
     @stack('scripts')

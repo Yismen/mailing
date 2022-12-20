@@ -1,10 +1,10 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire\Recipient;
+namespace Dainsys\Mailing\Http\Livewire\Recipient;
 
 use Livewire\Component;
-use Dainsys\Report\Models\Recipient;
-use Dainsys\Report\Services\RecipientService;
+use Dainsys\Mailing\Models\Recipient;
+use Dainsys\Mailing\Services\RecipientService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Index extends Component
@@ -20,9 +20,9 @@ class Index extends Component
     {
         $this->authorize('viewAny', new Recipient());
 
-        return view('report::livewire.recipient.index', [
+        return view('mailing::livewire.recipient.index', [
             'recipients' => RecipientService::list()
         ])
-        ->layout('report::layouts.app');
+        ->layout('mailing::layouts.app');
     }
 }

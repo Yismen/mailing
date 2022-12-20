@@ -1,6 +1,6 @@
 <div class="d-inline-block">
-    @include('report::tables.show')
+    @include('mailing::tables.show')
 
 
-    @include('report::tables.edit')
+    @include('mailing::tables.edit')
 </div>

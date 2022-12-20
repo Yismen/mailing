@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReportMailablesTable extends Migration
+class CreateMailingRecipientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateReportMailablesTable extends Migration
      */
     public function up()
     {
-        Schema::create(reportTableName('mailables'), function (Blueprint $table) {
+        Schema::create(mailingTableName('recipients'), function (Blueprint $table) {
             $table->id();
             $table->string('name', 500)->unique();
-            $table->text('description')->nullable();
-            $table->boolean('active')->default(false);
+            $table->string('email', 500)->unique();
+            $table->string('title', 50)->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateReportMailablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(reportTableName('mailables'));
+        Schema::dropIfExists(mailingTableName('recipients'));
     }
 }

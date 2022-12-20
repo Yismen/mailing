@@ -13,7 +13,7 @@ return [
     'name' => 'Nombre',
     'recipient' => 'Contacto',
     'recipients' => 'Contactos',
-    'report_links' => 'Enlances Reporte',
+    'mailing_links' => 'Enlances Mailinge',
     'table' => 'Tabla',
     'title' => 'Titulo',
     'update' => 'Actualizar',

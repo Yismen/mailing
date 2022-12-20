@@ -4,7 +4,7 @@
  * emails separate by comma (,) or pipe(|).
  */
 return [
-    'super_users' => env('REPORT_SUPER_USERS', 'yismen.jorge@gmail.com'),
+    'super_users' => env('MAILING_SUPER_USERS', 'yismen.jorge@gmail.com'),
     /**
     * Here you can specify a list of middleware to apply to
     * all routes. use "," or "|" to separate the list.
@@ -14,12 +14,12 @@ return [
         'web' => 'auth',
     ],
     'mailables_dirs' => [
-        env('REPORT_MAILABLES_DIR', __DIR__ . '/../src/Mail/')
+        env('MAILING_MAILABLES_DIR', __DIR__ . '/../src/Mail/')
     ],
-    'db_prefix' => 'report_',
+    'db_prefix' => 'mailing_',
     'routes_prefix' => [
-        'guest' => 'report',
-        'admin' => 'report/admin'
+        'guest' => 'mailing',
+        'admin' => 'mailing/admin'
     ],
     'seeds' => [
         'termination_types' => [],
@@ -29,5 +29,5 @@ return [
         'departments' => [],
         'payment_types' => [],
     ],
-    'layout' => env('LAYOUT_VIEW', 'report::layouts.app')
+    'layout' => env('LAYOUT_VIEW', 'mailing::layouts.app')
 ];

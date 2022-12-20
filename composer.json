@@ -1,6 +1,6 @@
 {
-    "name": "dainsys/report",
-    "description": "Report and recipients management package for Dainsys. This package allows you to Associate recipients to your mailable files.",
+    "name": "dainsys/mailing",
+    "description": "Mailing and recipients management package for Dainsys. This package allows you to Associate recipients to your mailable files.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -24,9 +24,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Dainsys\\Report\\Database\\Factories\\": "database/factories/",
-            "Dainsys\\Report\\Database\\Seeders\\": "database/seeders/",
-            "Dainsys\\Report\\": "src/"
+            "Dainsys\\Mailing\\Database\\Factories\\": "database/factories/",
+            "Dainsys\\Mailing\\Database\\Seeders\\": "database/seeders/",
+            "Dainsys\\Mailing\\": "src/"
         },
         "files": [
             "helpers/functions.php"
@@ -34,13 +34,13 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Dainsys\\Report\\Tests\\": "tests/"
+            "Dainsys\\Mailing\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Dainsys\\Report\\ReportServiceProvider"
+                "Dainsys\\Mailing\\MailingServiceProvider"
             ]
         }
     }

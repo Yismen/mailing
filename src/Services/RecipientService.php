@@ -1,8 +1,8 @@
 <?php
 
-namespace Dainsys\Report\Services;
+namespace Dainsys\Mailing\Services;
 
-use Dainsys\Report\Models\Recipient;
+use Dainsys\Mailing\Models\Recipient;
 use Illuminate\Support\Facades\Cache;
 
 class RecipientService implements ServicesContract

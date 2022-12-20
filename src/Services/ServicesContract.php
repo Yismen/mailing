@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Services;
+namespace Dainsys\Mailing\Services;
 
 interface ServicesContract
 {

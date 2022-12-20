@@ -1,10 +1,10 @@
 <?php
 
-namespace Dainsys\Report\Tests\Feature\Models;
+namespace Dainsys\Mailing\Tests\Feature\Models;
 
-use Dainsys\Report\Tests\TestCase;
-use Dainsys\Report\Models\Mailable;
-use Dainsys\Report\Models\Recipient;
+use Dainsys\Mailing\Tests\TestCase;
+use Dainsys\Mailing\Models\Mailable;
+use Dainsys\Mailing\Models\Recipient;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class MailableTest extends TestCase
@@ -18,7 +18,7 @@ class MailableTest extends TestCase
 
         Mailable::create($data->toArray());
 
-        $this->assertDatabaseHas(reportTableName('mailables'), $data->only([
+        $this->assertDatabaseHas(mailingTableName('mailables'), $data->only([
             'name', 'description', 'active'
         ]));
     }
@@ -39,6 +39,6 @@ class MailableTest extends TestCase
 
         $mailable->recipients()->sync([$recipient->id]);
 
-        $this->assertDatabaseHas(reportTableName('mailable_recipient'), ['mailable_id' => $mailable->id, 'recipient_id' => $recipient->id]);
+        $this->assertDatabaseHas(mailingTableName('mailable_recipient'), ['mailable_id' => $mailable->id, 'recipient_id' => $recipient->id]);
     }
 }

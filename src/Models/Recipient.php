@@ -1,9 +1,9 @@
 <?php
 
-namespace Dainsys\Report\Models;
+namespace Dainsys\Mailing\Models;
 
-use Dainsys\Report\Database\Factories\RecipientFactory;
-use Dainsys\Report\Models\Traits\BelongsToManyMailables;
+use Dainsys\Mailing\Database\Factories\RecipientFactory;
+use Dainsys\Mailing\Models\Traits\BelongsToManyMailables;
 
 class Recipient extends AbstractModel
 {

@@ -4,7 +4,7 @@
 ])
 
 <div class="mb-3">
-    <x-report::inputs.label :field="$field" :required="$required" :label="$slot" />
+    <x-mailing::inputs.label :field="$field" :required="$required" :label="$slot" />
     <textarea wire:model='{{ $field }}' id="{{ $field }}" {{ $attributes->class([
             'form-control',
             'is-invalid' => $errors->has($field)
@@ -13,5 +13,5 @@
         ]) }}
         ></textarea>
 
-    <x-report::inputs.error :field="$field" />
+    <x-mailing::inputs.error :field="$field" />
 </div>

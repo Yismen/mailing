@@ -16,6 +16,6 @@ $id = rand();
         <label class="custom-control-label" for="{{ $id }}">
             {{ $slot }}
         </label>
-        <x-report::inputs.error :field="$field" />
+        <x-mailing::inputs.error :field="$field" />
     </div>
 </div>

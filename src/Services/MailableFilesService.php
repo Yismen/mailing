@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Services;
+namespace Dainsys\Mailing\Services;
 
 use ReflectionClass;
 use Illuminate\Filesystem\Filesystem;
@@ -26,7 +26,7 @@ class MailableFilesService implements ServicesContract
 
     protected static function getFiles(): array
     {
-        $paths = app('config')->get('report.mailables_dirs');
+        $paths = app('config')->get('mailing.mailables_dirs');
         $filesystem = new Filesystem();
         self::$files = [];
 

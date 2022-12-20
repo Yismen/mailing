@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Traits;
+namespace Dainsys\Mailing\Traits;
 
 trait WithRealTimeValidation
 {

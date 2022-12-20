@@ -13,13 +13,13 @@
     <div class="mt-3 border-top p-2">
 
         @if ($editing)
-        <x-report::button type="submit" color="warning" class="btn-sm">
-            {{ __('report::messages.update') }}
-        </x-report::button>
+        <x-mailing::button type="submit" color="warning" class="btn-sm">
+            {{ __('mailing::messages.update') }}
+        </x-mailing::button>
         @else
-        <x-report::button type="submit" color="primary" class="btn-sm">
-            {{ __('report::messages.create') }}
-        </x-report::button>
+        <x-mailing::button type="submit" color="primary" class="btn-sm">
+            {{ __('mailing::messages.create') }}
+        </x-mailing::button>
         @endif
     </div>
     @endif

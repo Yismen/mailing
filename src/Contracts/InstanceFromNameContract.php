@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Contracts;
+namespace Dainsys\Mailing\Contracts;
 
 interface InstanceFromNameContract
 {

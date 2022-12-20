@@ -4,7 +4,7 @@
 'field',
 ])
 <div class="mb-3">
-    <x-report::inputs.label :field="$field" :required="$required" :label="$slot" />
+    <x-mailing::inputs.label :field="$field" :required="$required" :label="$slot" />
 
     <input type="{{ $type }}" id="{{ $field }}" aria-describedby="{{ $field }}Help" wire:model='{{ $field }}' {{
         $attributes->class([
@@ -14,5 +14,5 @@
     ]) }}
     >
 
-    <x-report::inputs.error :field="$field" />
+    <x-mailing::inputs.error :field="$field" />
 </div>

@@ -1,9 +1,9 @@
 <?php
 
-namespace Dainsys\Report\Tests;
+namespace Dainsys\Mailing\Tests;
 
 use Illuminate\Support\Facades\Auth;
-use Dainsys\Report\Tests\Models\User;
+use Dainsys\Mailing\Tests\Models\User;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 class TestCase extends OrchestraTestCase
@@ -30,7 +30,7 @@ class TestCase extends OrchestraTestCase
             \Livewire\LivewireServiceProvider::class,
             \Rappasoft\LaravelLivewireTables\LaravelLivewireTablesServiceProvider::class,
             \Flasher\Laravel\FlasherServiceProvider::class,
-            \Dainsys\Report\ReportServiceProvider::class,
+            \Dainsys\Mailing\MailingServiceProvider::class,
         ];
     }
 

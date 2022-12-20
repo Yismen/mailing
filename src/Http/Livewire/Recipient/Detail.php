@@ -1,9 +1,9 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire\Recipient;
+namespace Dainsys\Mailing\Http\Livewire\Recipient;
 
 use Livewire\Component;
-use Dainsys\Report\Models\Recipient;
+use Dainsys\Mailing\Models\Recipient;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Detail extends Component
@@ -21,9 +21,9 @@ class Detail extends Component
 
     public function render()
     {
-        return view('report::livewire.recipient.detail', [
+        return view('mailing::livewire.recipient.detail', [
         ])
-        ->layout('report::layouts.app');
+        ->layout('mailing::layouts.app');
     }
 
     public function showRecipient(Recipient $recipient)

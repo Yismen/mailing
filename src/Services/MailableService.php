@@ -1,8 +1,8 @@
 <?php
 
-namespace Dainsys\Report\Services;
+namespace Dainsys\Mailing\Services;
 
-use Dainsys\Report\Models\Mailable;
+use Dainsys\Mailing\Models\Mailable;
 use Illuminate\Support\Facades\Cache;
 
 class MailableService implements ServicesContract

@@ -1,12 +1,12 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire\Mailable;
+namespace Dainsys\Mailing\Http\Livewire\Mailable;
 
 use Livewire\Component;
 use Illuminate\Validation\Rule;
-use Dainsys\Report\Models\Mailable;
-use Dainsys\Report\Services\RecipientService;
-use Dainsys\Report\Traits\WithRealTimeValidation;
+use Dainsys\Mailing\Models\Mailable;
+use Dainsys\Mailing\Services\RecipientService;
+use Dainsys\Mailing\Traits\WithRealTimeValidation;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Form extends Component
@@ -27,10 +27,10 @@ class Form extends Component
 
     public function render()
     {
-        return view('report::livewire.mailable.form', [
+        return view('mailing::livewire.mailable.form', [
             'recipients_list' => RecipientService::list()->all()
         ])
-        ->layout('report::layouts.app');
+        ->layout('mailing::layouts.app');
     }
 
     public function createMailable($mailable = null)
@@ -99,7 +99,7 @@ class Form extends Component
         return [
             'mailable.name' => [
                 'required',
-                Rule::unique(reportTableName('mailables'), 'name')->ignore($this->mailable->id ?? 0)
+                Rule::unique(mailingTableName('mailables'), 'name')->ignore($this->mailable->id ?? 0)
             ],
             'mailable.description' => [
                 'nullable'

@@ -1,12 +1,12 @@
 @props(['information', 'modelName', 'modelId'])
 <div class="border-top bg-gradient-info py-2">
-    <h5 class="px-2">{{ __('report::messages.information') }}</h5>
+    <h5 class="px-2">{{ __('mailing::messages.information') }}</h5>
 
     @if (isset($information) && $information )
     <table class="table table-striped table-inverse table-sm">
         <tbody class="thead-inverse">
             <tr>
-                <th class="text-right">{{ __('report::messages.photo') }}:</th>
+                <th class="text-right">{{ __('mailing::messages.photo') }}:</th>
                 <td class="text-left">
                     <a href="{{ '/storage/' . $information->photo_url ?? '' }}" target="_blank"
                         rel="noopener noreferrer">
@@ -16,19 +16,19 @@
                 </td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('report::messages.phone') }}:</th>
+                <th class="text-right">{{ __('mailing::messages.phone') }}:</th>
                 <td class="text-left">{{ $information->phone ?? '' }}</td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('report::messages.email') }}:</th>
+                <th class="text-right">{{ __('mailing::messages.email') }}:</th>
                 <td class="text-left">{{ $information->email ?? '' }}</td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('report::messages.address') }}:</th>
+                <th class="text-right">{{ __('mailing::messages.address') }}:</th>
                 <td class="text-left">{{ $information->address ?? '' }}</td>
             </tr>
             <tr>
-                <th class="text-right">{{ __('report::messages.company_id') }}:</th>
+                <th class="text-right">{{ __('mailing::messages.company_id') }}:</th>
                 <td class="text-left">{{ $information->company_id ?? '' }}</td>
             </tr>
         </tbody>
@@ -46,7 +46,7 @@
 
     <div class="btn btn-sm btn-primary mx-2"
         wire:click='$emit("createInformation", "{{ str($modelName ?? '')->afterLast("\\") }}", "{{ $modelId }}" )'>
-        {{ __('report::messages.=add') }} {{ __('report::messages.information') }}
+        {{ __('mailing::messages.=add') }} {{ __('mailing::messages.information') }}
     </div>
     @endif
 </div>

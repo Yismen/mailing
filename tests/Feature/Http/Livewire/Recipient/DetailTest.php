@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Feature\Http\Livewire\Recipient;
+namespace Dainsys\Mailing\Feature\Http\Livewire\Recipient;
 
 use Livewire\Livewire;
-use Dainsys\Report\Tests\TestCase;
-use Dainsys\Report\Models\Recipient;
-use Dainsys\Report\Http\Livewire\Recipient\Detail;
+use Dainsys\Mailing\Tests\TestCase;
+use Dainsys\Mailing\Models\Recipient;
+use Dainsys\Mailing\Http\Livewire\Recipient\Detail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DetailTest extends TestCase

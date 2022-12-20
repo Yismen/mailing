@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Scopes;
+namespace Dainsys\Mailing\Scopes;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;

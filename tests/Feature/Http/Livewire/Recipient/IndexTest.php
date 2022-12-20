@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Feature\Http\Livewire\Recipient;
+namespace Dainsys\Mailing\Feature\Http\Livewire\Recipient;
 
 use Livewire\Livewire;
-use Dainsys\Report\Tests\TestCase;
+use Dainsys\Mailing\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Dainsys\Report\Http\Livewire\Recipient\Index;
+use Dainsys\Mailing\Http\Livewire\Recipient\Index;
 
 class IndexTest extends TestCase
 {
@@ -14,7 +14,7 @@ class IndexTest extends TestCase
     /** @test */
     public function recipients_index_route_requires_authentication()
     {
-        $response = $this->get(route('report.admin.recipients.index'));
+        $response = $this->get(route('mailing.admin.recipients.index'));
 
         $response->assertRedirect(route('login'));
     }
@@ -24,7 +24,7 @@ class IndexTest extends TestCase
     // {
     //     $this->withoutAuthorizedUser();
 
-    //     $response = $this->get(route('report.admin.recipients.index'));
+    //     $response = $this->get(route('mailing.admin.recipients.index'));
 
     //     $response->assertForbidden();
     // }
@@ -34,7 +34,7 @@ class IndexTest extends TestCase
     {
         $this->withAuthorizedUser();
 
-        $response = $this->get(route('report.admin.recipients.index'));
+        $response = $this->get(route('mailing.admin.recipients.index'));
 
         $response->assertOk();
     }
@@ -53,6 +53,6 @@ class IndexTest extends TestCase
         $this->withAuthorizedUser();
         $component = Livewire::test(Index::class);
 
-        $component->assertViewIs('report::livewire.recipient.index');
+        $component->assertViewIs('mailing::livewire.recipient.index');
     }
 }

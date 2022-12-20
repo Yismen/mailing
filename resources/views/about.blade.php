@@ -1,4 +1,4 @@
-@extends(config('report.layout'))
+@extends(config('mailing.layout'))
 
 @section('content')
 <div class="card">

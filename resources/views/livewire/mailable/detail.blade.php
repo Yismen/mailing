@@ -1,29 +1,29 @@
 <div>
 
-    <x-report::modal title="{{ __('report::messages.mailable') }} - {{ $mailable->name ?? '' }}"
+    <x-mailing::modal title="{{ __('mailing::messages.mailable') }} - {{ $mailable->name ?? '' }}"
         modal-name="MailableDetails" event-name="{{ $this->modal_event_name_detail }}">
 
         <table class="table table-striped table-inverse table-sm">
             <tbody class="thead-inverse">
                 <tr>
-                    <th class="text-right">{{ __('report::messages.name') }}:</th>
+                    <th class="text-right">{{ __('mailing::messages.name') }}:</th>
                     <td class="text-left">{{ $mailable->name ?? '' }}</td>
                 </tr>
                 <tr>
-                    <th class="text-right">{{ __('report::messages.description') }}:</th>
+                    <th class="text-right">{{ __('mailing::messages.description') }}:</th>
                     <td class="text-left">{{ $mailable->description ?? '' }}</td>
                 </tr>
             </tbody>
         </table>
 
-        <h5 class="p-2 border-top">{{ __('report::messages.recipients') }}</h5>
+        <h5 class="p-2 border-top">{{ __('mailing::messages.recipients') }}</h5>
         @if ($mailable && $mailable->recipients)
         <table class="table table-striped table-sm px-2">
             <thead class="thead-inverse">
                 <tr>
-                    <th>{{ __('report::messages.name') }}</th>
-                    <th>{{ __('report::messages.email') }}</th>
-                    <th>{{ __('report::messages.title') }}</th>
+                    <th>{{ __('mailing::messages.name') }}</th>
+                    <th>{{ __('mailing::messages.email') }}</th>
+                    <th>{{ __('mailing::messages.title') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,5 +42,5 @@
             <button class="btn btn-warning btn-sm" wire:click='$emit("updateMailable", {{ $mailable->id ?? '' }})'>{{
                 __('Edit') }}</button>
         </x-slot>
-    </x-report::modal>
+    </x-mailing::modal>
 </div>

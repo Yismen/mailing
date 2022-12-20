@@ -5,30 +5,30 @@
     __('New'), __('Recipient') ])
     @endphp
 
-    <x-report::modal modal-name="RecipientForm" title="{{ $title }}" event-name="{{ $this->modal_event_name_form }}"
+    <x-mailing::modal modal-name="RecipientForm" title="{{ $title }}" event-name="{{ $this->modal_event_name_form }}"
         :backdrop="false">
 
-        <x-report::form :editing="$editing">
+        <x-mailing::form :editing="$editing">
             <div class="p-3">
-                <x-report::inputs.with-labels field="recipient.name">{{ __('report::messages.name') }}:
-                </x-report::inputs.with-labels>
+                <x-mailing::inputs.with-labels field="recipient.name">{{ __('mailing::messages.name') }}:
+                </x-mailing::inputs.with-labels>
 
-                <x-report::inputs.with-labels field="recipient.email" type="email">{{ __('report::messages.email') }}:
-                </x-report::inputs.with-labels>
+                <x-mailing::inputs.with-labels field="recipient.email" type="email">{{ __('mailing::messages.email') }}:
+                </x-mailing::inputs.with-labels>
 
-                <x-report::inputs.with-labels field="recipient.title" :required="false">{{ __('report::messages.title')
+                <x-mailing::inputs.with-labels field="recipient.title" :required="false">{{ __('mailing::messages.title')
                     }}:
-                </x-report::inputs.with-labels>
+                </x-mailing::inputs.with-labels>
 
-                <h5 class="border-top pt-1">{{ __('report::messages.mailables') }}</h5>
+                <h5 class="border-top pt-1">{{ __('mailing::messages.mailables') }}</h5>
                 @foreach ($mailables_list as $mailable_id => $mailable_name)
-                <x-report::inputs.switch field="mailables" value="{{ $mailable_id }}"
+                <x-mailing::inputs.switch field="mailables" value="{{ $mailable_id }}"
                     wire:key='mailable{{ $mailable_id }}'>
                     {{
                     $mailable_name }}
-                </x-report::inputs.switch>
+                </x-mailing::inputs.switch>
                 @endforeach
             </div>
-        </x-report::form>
-    </x-report::modal>
+        </x-mailing::form>
+    </x-mailing::modal>
 </div>

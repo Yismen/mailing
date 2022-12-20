@@ -1,10 +1,10 @@
 <?php
 
-namespace Dainsys\Report\Feature\Http\Livewire\Mailable;
+namespace Dainsys\Mailing\Feature\Http\Livewire\Mailable;
 
 use Livewire\Livewire;
-use Dainsys\Report\Tests\TestCase;
-use Dainsys\Report\Http\Livewire\Mailable\Index;
+use Dainsys\Mailing\Tests\TestCase;
+use Dainsys\Mailing\Http\Livewire\Mailable\Index;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class IndexTest extends TestCase
@@ -14,7 +14,7 @@ class IndexTest extends TestCase
     /** @test */
     public function mailables_index_route_requires_authentication()
     {
-        $response = $this->get(route('report.admin.mailables.index'));
+        $response = $this->get(route('mailing.admin.mailables.index'));
 
         $response->assertRedirect(route('login'));
     }
@@ -24,7 +24,7 @@ class IndexTest extends TestCase
     // {
     //     $this->withoutAuthorizedUser();
 
-    //     $response = $this->get(route('report.admin.mailables.index'));
+    //     $response = $this->get(route('mailing.admin.mailables.index'));
 
     //     $response->assertForbidden();
     // }
@@ -34,7 +34,7 @@ class IndexTest extends TestCase
     {
         $this->withAuthorizedUser();
 
-        $response = $this->get(route('report.admin.mailables.index'));
+        $response = $this->get(route('mailing.admin.mailables.index'));
 
         $response->assertOk();
     }
@@ -53,6 +53,6 @@ class IndexTest extends TestCase
         $this->withAuthorizedUser();
         $component = Livewire::test(Index::class);
 
-        $component->assertViewIs('report::livewire.mailable.index');
+        $component->assertViewIs('mailing::livewire.mailable.index');
     }
 }

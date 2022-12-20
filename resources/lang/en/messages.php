@@ -13,7 +13,7 @@ return [
     'name' => 'Name',
     'recipient' => 'Recipient',
     'recipients' => 'Recipients',
-    'report_links' => 'Report Links',
+    'mailing_links' => 'Mailing Links',
     'table' => 'Table',
     'title' => 'Title',
     'update' => 'Update',

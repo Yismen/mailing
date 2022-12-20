@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Exceptions;
+namespace Dainsys\Mailing\Exceptions;
 
 use Exception;
 

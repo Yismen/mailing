@@ -1,9 +1,9 @@
 <?php
 
-if (function_exists('reportTableName') === false) {
-    function reportTableName(string $name)
+if (function_exists('mailingTableName') === false) {
+    function mailingTableName(string $name)
     {
-        return config('report.db_prefix') . $name;
+        return config('mailing.db_prefix') . $name;
     }
 }
 

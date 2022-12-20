@@ -1,12 +1,12 @@
 <?php
 
-namespace Dainsys\Report\Feature\Http\Livewire\Mailable;
+namespace Dainsys\Mailing\Feature\Http\Livewire\Mailable;
 
 use Livewire\Livewire;
-use Dainsys\Report\Models\Mailable;
-use Dainsys\Report\Tests\TestCase;
+use Dainsys\Mailing\Models\Mailable;
+use Dainsys\Mailing\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Dainsys\Report\Http\Livewire\Mailable\Detail;
+use Dainsys\Mailing\Http\Livewire\Mailable\Detail;
 
 class DetailTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Dainsys\Report\Support;
+namespace Dainsys\Mailing\Support;
 
-use Dainsys\Report\Contracts\AuthorizedUsersContract;
+use Dainsys\Mailing\Contracts\AuthorizedUsersContract;
 
 class AuthorizedUsers implements AuthorizedUsersContract
 {
@@ -16,7 +16,7 @@ class AuthorizedUsers implements AuthorizedUsersContract
             },
             preg_split(
                 "/[\|,]+/",
-                config('report.super_users'),
+                config('mailing.super_users'),
                 -1,
                 PREG_SPLIT_NO_EMPTY
             )

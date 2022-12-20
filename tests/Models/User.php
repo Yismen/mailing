@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Tests\Models;
+namespace Dainsys\Mailing\Tests\Models;
 
 use Orchestra\Testbench\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

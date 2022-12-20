@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Policies;
+namespace Dainsys\Mailing\Policies;
 
-use Dainsys\Report\Models\Mailable;
+use Dainsys\Mailing\Models\Mailable;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Dainsys\Report\Policies\Traits\HasAdminCheck;
+use Dainsys\Mailing\Policies\Traits\HasAdminCheck;
 
 class MailablePolicy
 {

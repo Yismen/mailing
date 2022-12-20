@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Console\Commands;
+namespace Dainsys\Mailing\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -11,14 +11,14 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'report:install';
+    protected $signature = 'mailing:install';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install Dainsys Report';
+    protected $description = 'Install Dainsys Mailing';
 
     /**
      * Create a new command instance.
@@ -37,22 +37,22 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        $this->call('vendor:publish', ['--tag' => 'report:assets', '--force' => true]);
+        $this->call('vendor:publish', ['--tag' => 'mailing:assets', '--force' => true]);
 
-        if ($this->confirm('Would you like to run the report\'s migrations now?')) {
+        if ($this->confirm('Would you like to run the mailing\'s migrations now?')) {
             $this->call('migrate');
         }
 
-        if ($this->confirm('Would you like to publish the report\'s configuration file?')) {
-            $this->call('vendor:publish', ['--tag' => 'report:config', '--force' => true]);
+        if ($this->confirm('Would you like to publish the mailing\'s configuration file?')) {
+            $this->call('vendor:publish', ['--tag' => 'mailing:config', '--force' => true]);
         }
 
-        if ($this->confirm('Would you like to publish the report\'s translation file?')) {
-            $this->call('vendor:publish', ['--tag' => 'report:translations']);
+        if ($this->confirm('Would you like to publish the mailing\'s translation file?')) {
+            $this->call('vendor:publish', ['--tag' => 'mailing:translations']);
         }
 
-        if ($this->confirm('Would you like to publish the report\'s view files?')) {
-            $this->call('vendor:publish', ['--tag' => 'report:views']);
+        if ($this->confirm('Would you like to publish the mailing\'s view files?')) {
+            $this->call('vendor:publish', ['--tag' => 'mailing:views']);
         }
 
         $this->info('All done!');

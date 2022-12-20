@@ -1,12 +1,12 @@
 <?php
 
-use Dainsys\Report\Models\Mailable;
-use Dainsys\Report\Models\Recipient;
+use Dainsys\Mailing\Models\Mailable;
+use Dainsys\Mailing\Models\Recipient;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReportMailableRecipientPivotTable extends Migration
+class CreateMailingMailableRecipientPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateReportMailableRecipientPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create(reportTableName('mailable_recipient'), function (Blueprint $table) {
+        Schema::create(mailingTableName('mailable_recipient'), function (Blueprint $table) {
             $table->foreignIdFor(Mailable::class);
             $table->foreignIdFor(Recipient::class);
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateReportMailableRecipientPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(reportTableName('mailable_recipient'));
+        Schema::dropIfExists(mailingTableName('mailable_recipient'));
     }
 }

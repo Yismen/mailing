@@ -1,9 +1,9 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire\Mailable;
+namespace Dainsys\Mailing\Http\Livewire\Mailable;
 
 use Livewire\Component;
-use Dainsys\Report\Models\Mailable;
+use Dainsys\Mailing\Models\Mailable;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Detail extends Component
@@ -21,9 +21,9 @@ class Detail extends Component
 
     public function render()
     {
-        return view('report::livewire.mailable.detail', [
+        return view('mailing::livewire.mailable.detail', [
         ])
-        ->layout('report::layouts.app');
+        ->layout('mailing::layouts.app');
     }
 
     public function showMailable(Mailable $mailable)

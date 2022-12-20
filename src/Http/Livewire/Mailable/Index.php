@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire\Mailable;
+namespace Dainsys\Mailing\Http\Livewire\Mailable;
 
 use Livewire\Component;
-use Dainsys\Report\Models\Mailable;
-use Dainsys\Report\Services\MailableService;
-use Dainsys\Report\Services\MailableFilesService;
+use Dainsys\Mailing\Models\Mailable;
+use Dainsys\Mailing\Services\MailableService;
+use Dainsys\Mailing\Services\MailableFilesService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Index extends Component
@@ -21,10 +21,10 @@ class Index extends Component
     {
         $this->authorize('viewAny', new Mailable());
 
-        return view('report::livewire.mailable.index', [
+        return view('mailing::livewire.mailable.index', [
             'mailable_files' => MailableFilesService::list(),
             'mailables' => MailableService::list(),
         ])
-        ->layout('report::layouts.app');
+        ->layout('mailing::layouts.app');
     }
 }

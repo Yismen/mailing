@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire;
+namespace Dainsys\Mailing\Http\Livewire;
 
 use Livewire\Component;
-use Dainsys\Report\Services\MailableService;
-use Dainsys\Report\Services\RecipientService;
-use Dainsys\Report\Services\MailableFilesService;
+use Dainsys\Mailing\Services\MailableService;
+use Dainsys\Mailing\Services\RecipientService;
+use Dainsys\Mailing\Services\MailableFilesService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Dashboard extends Component
@@ -14,11 +14,11 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('report::livewire.dashboard', [
+        return view('mailing::livewire.dashboard', [
             'mailables' => MailableFilesService::count(),
             'registered' => MailableService::count(),
             'recipients' => RecipientService::count(),
         ])
-        ->layout('report::layouts.app');
+        ->layout('mailing::layouts.app');
     }
 }

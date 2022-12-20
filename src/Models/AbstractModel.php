@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Models;
+namespace Dainsys\Mailing\Models;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
@@ -21,6 +21,6 @@ class AbstractModel extends Model
 
     public function getTable(): string
     {
-        return reportTableName(str(get_class($this))->afterLast('\\')->plural()->snake()->lower());
+        return mailingTableName(str(get_class($this))->afterLast('\\')->plural()->snake()->lower());
     }
 }

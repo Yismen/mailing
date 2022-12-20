@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Feature\Http\Livewire\Mailable;
+namespace Dainsys\Mailing\Feature\Http\Livewire\Mailable;
 
 use Livewire\Livewire;
-use Dainsys\Report\Tests\TestCase;
-use Dainsys\Report\Models\Mailable;
-use Dainsys\Report\Http\Livewire\Mailable\Form;
+use Dainsys\Mailing\Tests\TestCase;
+use Dainsys\Mailing\Models\Mailable;
+use Dainsys\Mailing\Http\Livewire\Mailable\Form;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class FormTest extends TestCase
@@ -69,7 +69,7 @@ class FormTest extends TestCase
         $component->assertDispatchedBrowserEvent('closeAllModals');
         $component->assertEmitted('mailableUpdated');
 
-        $this->assertDatabaseHas(reportTableName('mailables'), $data);
+        $this->assertDatabaseHas(mailingTableName('mailables'), $data);
     }
 
     /** @test */
@@ -87,7 +87,7 @@ class FormTest extends TestCase
         $component->assertSet('editing', false);
         $component->assertDispatchedBrowserEvent('closeAllModals');
         $component->assertEmitted('mailableUpdated');
-        $this->assertDatabaseHas(reportTableName('mailables'), ['name' => 'Updated Mailable', 'description' => 'Updated description']);
+        $this->assertDatabaseHas(mailingTableName('mailables'), ['name' => 'Updated Mailable', 'description' => 'Updated description']);
     }
 
     /** @test */

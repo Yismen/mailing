@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire\Mailable;
+namespace Dainsys\Mailing\Http\Livewire\Mailable;
 
-use Dainsys\Report\Models\Mailable;
+use Dainsys\Mailing\Models\Mailable;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use Dainsys\Report\Http\Livewire\AbstractDataTableComponent;
+use Dainsys\Mailing\Http\Livewire\AbstractDataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter;
 use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
 
@@ -39,9 +39,9 @@ class Table extends AbstractDataTableComponent
                 ->searchable()
                 ->format(fn ($value, $row) => $row->short_description),
             Column::make('Recipients', 'id')
-                ->format(fn ($value, $row) => view('report::tables.badge')->with(['value' => $row->recipients_count])),
+                ->format(fn ($value, $row) => view('mailing::tables.badge')->with(['value' => $row->recipients_count])),
             Column::make('Actions', 'id')
-                ->view('report::tables.actions'),
+                ->view('mailing::tables.actions'),
         ];
     }
 

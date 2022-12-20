@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Http\Controllers;
+namespace Dainsys\Mailing\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

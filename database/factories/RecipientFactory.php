@@ -1,8 +1,8 @@
 <?php
 
-namespace Dainsys\Report\Database\Factories;
+namespace Dainsys\Mailing\Database\Factories;
 
-use Dainsys\Report\Models\Recipient;
+use Dainsys\Mailing\Models\Recipient;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RecipientFactory extends Factory

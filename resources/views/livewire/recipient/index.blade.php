@@ -1,9 +1,9 @@
 <div>
-    <livewire:report::recipient.detail />
-    <livewire:report::recipient.form />
+    <livewire:mailing::recipient.detail />
+    <livewire:mailing::recipient.form />
     <div class="card ">
         <div class="card-body text-black" :key="time()">
-            <livewire:report::recipient.table />
+            <livewire:mailing::recipient.table />
         </div>
     </div>
 </div>

@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Policies;
+namespace Dainsys\Mailing\Policies;
 
-use Dainsys\Report\Models\Recipient;
+use Dainsys\Mailing\Models\Recipient;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Dainsys\Report\Policies\Traits\HasAdminCheck;
+use Dainsys\Mailing\Policies\Traits\HasAdminCheck;
 
 class RecipientPolicy
 {
@@ -27,7 +27,7 @@ class RecipientPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User                      $user
-     * @param  \App\Models\Recipient                  $site
+     * @param  \App\Models\Recipient                 $site
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function view(User $user, Recipient $site)
@@ -50,7 +50,7 @@ class RecipientPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User                      $user
-     * @param  \App\Models\Recipient                  $site
+     * @param  \App\Models\Recipient                 $site
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function update(User $user, Recipient $site)
@@ -62,7 +62,7 @@ class RecipientPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User                      $user
-     * @param  \App\Models\Recipient                  $site
+     * @param  \App\Models\Recipient                 $site
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function delete(User $user, Recipient $site)
@@ -74,7 +74,7 @@ class RecipientPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User                      $user
-     * @param  \App\Models\Recipient                  $site
+     * @param  \App\Models\Recipient                 $site
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function restore(User $user, Recipient $site)
@@ -86,7 +86,7 @@ class RecipientPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User                      $user
-     * @param  \App\Models\Recipient                  $site
+     * @param  \App\Models\Recipient                 $site
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function forceDelete(User $user, Recipient $site)

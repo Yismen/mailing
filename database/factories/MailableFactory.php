@@ -1,8 +1,8 @@
 <?php
 
-namespace Dainsys\Report\Database\Factories;
+namespace Dainsys\Mailing\Database\Factories;
 
-use Dainsys\Report\Models\Mailable;
+use Dainsys\Mailing\Models\Mailable;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MailableFactory extends Factory

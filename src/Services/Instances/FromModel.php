@@ -1,9 +1,9 @@
 <?php
 
-namespace Dainsys\Report\Services\Instances;
+namespace Dainsys\Mailing\Services\Instances;
 
 use InvalidArgumentException;
-use Dainsys\Report\Contracts\InstanceFromNameContract;
+use Dainsys\Mailing\Contracts\InstanceFromNameContract;
 
 class FromModel implements InstanceFromNameContract
 {

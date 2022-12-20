@@ -1,12 +1,12 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire\Recipient;
+namespace Dainsys\Mailing\Http\Livewire\Recipient;
 
 use Livewire\Component;
 use Illuminate\Validation\Rule;
-use Dainsys\Report\Models\Recipient;
-use Dainsys\Report\Services\MailableService;
-use Dainsys\Report\Traits\WithRealTimeValidation;
+use Dainsys\Mailing\Models\Recipient;
+use Dainsys\Mailing\Services\MailableService;
+use Dainsys\Mailing\Traits\WithRealTimeValidation;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Form extends Component
@@ -27,10 +27,10 @@ class Form extends Component
 
     public function render()
     {
-        return view('report::livewire.recipient.form', [
+        return view('mailing::livewire.recipient.form', [
             'mailables_list' => MailableService::list()
         ])
-        ->layout('report::layouts.app');
+        ->layout('mailing::layouts.app');
     }
 
     public function createRecipient($recipient = null)
@@ -98,11 +98,11 @@ class Form extends Component
         return [
             'recipient.name' => [
                 'required',
-                Rule::unique(reportTableName('recipients'), 'name')->ignore($this->recipient->id ?? 0)
+                Rule::unique(mailingTableName('recipients'), 'name')->ignore($this->recipient->id ?? 0)
             ],
             'recipient.email' => [
                 'required',
-                Rule::unique(reportTableName('recipients'), 'email')->ignore($this->recipient->id ?? 0)
+                Rule::unique(mailingTableName('recipients'), 'email')->ignore($this->recipient->id ?? 0)
             ],
             'recipient.title' => [
                 'nullable',

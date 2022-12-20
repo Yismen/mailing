@@ -1,10 +1,10 @@
 <?php
 
-namespace Dainsys\Report\Contracts;
+namespace Dainsys\Mailing\Contracts;
 
 use Illuminate\Mail\Mailable;
 
-interface ReportContract
+interface MailingContract
 {
     public static function bind(string $path): void;
 

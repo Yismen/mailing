@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Policies\Traits;
+namespace Dainsys\Mailing\Policies\Traits;
 
 use Illuminate\Foundation\Auth\User;
 

@@ -13,7 +13,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ mix('css/app.css', 'vendor/dainsys/report') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css', 'vendor/dainsys/mailing') }}">
     @livewireStyles
     <style>
         [x-cloak] {
@@ -54,7 +54,7 @@
                             <a href="{{ route('logout') }}" class="dropdown-item"
                                 onclick="event.preventDefault(); this.closest('form').submit();">
                                 <i class="mr-2 fas fa-sign-out-alt"></i>
-                                {{ __('report::messages.log_out') }}
+                                {{ __('mailing::messages.log_out') }}
                             </a>
                         </form>
                     </div>
@@ -69,10 +69,10 @@
             <a href="/" class="brand-link text-center text-uppercase">
                 {{-- <img src="{{ asset('images/logo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
-                <span class="brand-text font-weight-light">{{ config('app.name', 'Dainsys Report') }}</span>
+                <span class="brand-text font-weight-light">{{ config('app.name', 'Dainsys Mailing') }}</span>
             </a>
 
-            @include('report::layouts.navigation')
+            @include('mailing::layouts.navigation')
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
@@ -116,7 +116,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
-    <script src="{{ mix('js/app.js', 'vendor/dainsys/report') }}"></script>
+    <script src="{{ mix('js/app.js', 'vendor/dainsys/mailing') }}"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     @livewireScripts
     @stack('scripts')

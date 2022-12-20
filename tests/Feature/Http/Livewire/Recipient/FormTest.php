@@ -1,11 +1,11 @@
 <?php
 
-namespace Dainsys\Report\Feature\Http\Livewire\Recipient;
+namespace Dainsys\Mailing\Feature\Http\Livewire\Recipient;
 
 use Livewire\Livewire;
-use Dainsys\Report\Tests\TestCase;
-use Dainsys\Report\Models\Recipient;
-use Dainsys\Report\Http\Livewire\Recipient\Form;
+use Dainsys\Mailing\Tests\TestCase;
+use Dainsys\Mailing\Models\Recipient;
+use Dainsys\Mailing\Http\Livewire\Recipient\Form;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class FormTest extends TestCase
@@ -69,7 +69,7 @@ class FormTest extends TestCase
         $component->assertDispatchedBrowserEvent('closeAllModals');
         $component->assertEmitted('recipientUpdated');
 
-        $this->assertDatabaseHas(reportTableName('recipients'), $data);
+        $this->assertDatabaseHas(mailingTableName('recipients'), $data);
     }
 
     /** @test */
@@ -87,7 +87,7 @@ class FormTest extends TestCase
         $component->assertSet('editing', false);
         $component->assertDispatchedBrowserEvent('closeAllModals');
         $component->assertEmitted('recipientUpdated');
-        $this->assertDatabaseHas(reportTableName('recipients'), ['name' => 'Updated Recipient', 'email' => 'Updated email']);
+        $this->assertDatabaseHas(mailingTableName('recipients'), ['name' => 'Updated Recipient', 'email' => 'Updated email']);
     }
 
     /** @test */

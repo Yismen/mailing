@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Http\Livewire;
+namespace Dainsys\Mailing\Http\Livewire;
 
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
@@ -23,7 +23,7 @@ abstract class AbstractDataTableComponent extends DataTableComponent
 
         $this->setConfigurableAreas([
             'before-toolbar' => [
-                'report::tables.header', [
+                'mailing::tables.header', [
                     'module' => $this->module,
                     'count' => $records,
                 ],

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dainsys\Report\Support\Enums;
+namespace Dainsys\Mailing\Support\Enums;
 
 use ReflectionClass;
 

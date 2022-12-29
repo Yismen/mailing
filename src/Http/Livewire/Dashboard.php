@@ -14,6 +14,8 @@ class Dashboard extends Component
 
     public function render()
     {
+        $this->authorize('interact-with-mailing-admin');
+
         return view('mailing::livewire.dashboard', [
             'mailables' => MailableFilesService::count(),
             'registered' => MailableService::count(),

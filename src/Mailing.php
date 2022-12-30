@@ -21,9 +21,16 @@ class Mailing implements MailingContract
         }
     }
 
-    public static function recipients(Mailable $mail): array
+    /**
+     * Return a list of recipients assigned to mailable
+     *
+     * @param  \Illuminate\Mail\Mailable|string $mail
+     * @return array
+     */
+    public static function recipients($mail): array
     {
-        $class_name = get_class($mail);
+        $class_name = $mail instanceof Mailable ? get_class($mail) : $mail;
+
         $mailing = ModelsMailable::query()
             ->where('name', $class_name)
             ->with(['recipients'])

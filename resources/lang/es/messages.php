@@ -6,6 +6,7 @@ return [
     'create' => 'Crear',
     'dashboard' => 'Tablero',
     'description' => 'Descripcion',
+    'edit' => 'Editar',
     'email' => 'Email',
     'mailable' => 'Mailable',
     'mailables' => 'Mailables',

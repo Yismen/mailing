@@ -17,4 +17,5 @@ return [
     'table' => 'Table',
     'title' => 'Title',
     'update' => 'Update',
+    'edit' => 'Edit',
 ];

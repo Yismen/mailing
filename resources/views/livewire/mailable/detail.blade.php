@@ -39,8 +39,9 @@
         @endif
 
         <x-slot name="footer">
-            <button class="btn btn-warning btn-sm" wire:click='$emit("updateMailable", {{ $mailable->id ?? '' }})'>{{
-                __('Edit') }}</button>
+            <button class="btn btn-warning btn-sm" wire:click='$emit("updateMailable", {{ $mailable->id ?? '' }})'>
+                {{ __('mailing::messages.edit') }}
+            </button>
         </x-slot>
     </x-mailing::modal>
 </div>

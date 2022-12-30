@@ -27,4 +27,18 @@ class MailableFactory extends Factory
             'active' => $this->faker->randomElement([0, 1]),
         ];
     }
+
+    public function active()
+    {
+        return $this->state(fn ($q) => [
+            'active' => true
+        ]);
+    }
+
+    public function inactive()
+    {
+        return $this->state(fn ($q) => [
+            'active' => false
+        ]);
+    }
 }

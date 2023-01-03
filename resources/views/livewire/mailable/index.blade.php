@@ -8,9 +8,9 @@
             <ul class="list-group overflow-auto">
                 @foreach ($mailable_files as $mailable)
                 <li class="list-group-item d-flex justify-content-between ">
-                    <button class="btn btn-primary bg-gradient btn-sm"
-                        wire:click='$emit("createMailable", "{{ str($mailable)->replace("\\", "\\\\") }}")'>Add</button>
                     {{ $mailable }}
+                    <button class="btn btn-primary bg-gradient btn-sm ml-2"
+                        wire:click='$emit("createMailable", "{{ str($mailable)->replace("\\", "\\\\") }}")'>Add</button>
                 </li>
                 @endforeach
             </ul>

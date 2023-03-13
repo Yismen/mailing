@@ -40,7 +40,7 @@ class MailingServiceProvider extends AuthServiceProvider
 
     public function register()
     {
-        $this->app->singleton(\Dainsys\Mailing\Contracts\AuthorizedUsersContract::class, function ($app) {
+        $this->app->singleton(AuthorizedUsersContract::class, function ($app) {
             return new \Dainsys\Mailing\Support\AuthorizedUsers();
         });
 
